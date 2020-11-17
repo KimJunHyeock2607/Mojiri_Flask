@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="kr">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML CALCULATOR</title>
+		<link href="/static/CSS/H_Main_D.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="Wrap">
+            <div class="header">
+                <div class="gnb">
+                    <div class="inner">
+                        <div class="Logo">
+                            <a href="./index.html">HC</a>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li>
+                                     <a href="*">MYPAGE</a>
+                                 </li>
+                                <li>
+                                     <a href="*">LIBRARY</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="my">
+                            <ul>
+                                <li>
+                                    <p>DARK MODE</p>
+                                </li>
+                                <li class="D_icon">
+                                    <a href="*"></a>
+                                </li>
+                                <li>
+                                    <a href="*">login</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="*">sign up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="pro_big_banner">
+                    <div class="main_visual">
+                        <div class="banner_text">
+                            <a>
+                                <strong>HTML CALCULATOR</strong>
+                                <span>HTML CALCULATOR는 더욱 편리한 개발과 디자인 환경을 위해 만들어 졌습니다.   
+                                    계산기와 비율 변환기 그리고 격자 가이드를 통해 디자인과 개발의 입문 하시는 분부터
+                                    관련 분야에 종사하시는 분까지 모두를 위해 더욱 나은 환경을 위해 노력할 것 입니다.
+                                    그럼 모두 HTML CALCULATOR를 편히 이용하여 주세요!</span>
+                            </a>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="inner-w">
+                    <div class="contents">
+                        <section  class="content_1">
+                            <div class="line">  
+                            </div>
+                            <div class="Title">
+                                    <p>Caculator</p>
+                            </div>
+                            <div class="calculator">
+                                <table  class="result">
+                                    <tr>
+                                        <td>
+                                            <div class="result_section1">
+                                                <textarea style="ime-mode:disabled" title="계산식 입력" class=""  id="formula"></textarea> 
+                                            </div>
+                                            <div class="result_section0">
+                                                <textarea style="ime-mode:disabled" title="계산식" class=""  id="display"></textarea> 
+                                            </div>
+                                            <div class="result_section2" >
+                                                <label for="result"></label><input type="text" class="answer" id="result" readonly>
+                                           </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table  class="figure">
+                                    <tr>
+                                        <td class="num_pad" onclick="add('1')">
+                                            <div>
+                                                <button type="button" title="1" value="1" class="bt_1">1</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('2')">
+                                            <div>
+                                                <button type="button" title="2" value="2" class="bt_2">2</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('3')">
+                                            <div>
+                                                <button type="button" title="3" value="3" class="bt_3">3</button>
+                                            </div>  
+                                        </td>
+                                        <td class="num_pad" onclick="add('00')">
+                                            <div>
+                                                <button type="button" title="00" value="00" class="bt_00">00</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('4')">
+                                            <div>
+                                                <button type="button" title="백분율" value="pct" class="bt_percent">%</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="change()">
+                                            <div>
+                                                <button type="button" title="양수,음수전환" value="pm" class="bt_pm">pm</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="reset() "> 
+                                            <div>
+                                                <button type="button" title="모두 지우기" value="c" class="bt_c">c</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="back()">
+                                            <div>
+                                                <button type="button" title="이전" value="back" class="bt_back">back</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="num_pad" onclick="add('4')">
+                                            <div>
+                                                <button type="button" title="4" value="4" class="bt_4">4</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('5')">
+                                            <div>
+                                                <button type="button" title="5" value="5" class="bt_5">5</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('6')">
+                                            <div>
+                                                <button type="button" title="6" value="6" class="bt_6">6</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('.')">
+                                            <div>
+                                                <button type="button" title="." value="." class="bt_dot">.</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('*')">
+                                            <div>
+                                                <button type="button" title="곱하기" value="*" class="bt_multi">*</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="dvy1(display)">
+                                            <div>
+                                                <button type="button" title="역수" value="dvy1" class="bt_dvy1">dvy1</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="pow(display)">
+                                            <div>
+                                                <button type="button" title="^2" value="^2" class="bt_x2">x2</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="root(display)">
+                                            <div>
+                                                <button type="button" title="거듭제곱근" value="√" class="bt_root">√</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="num_pad" onclick="add(7)">
+                                            <div>
+                                                <button type="button" title="7" value="7" class="bt_7" >7</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add(8)">
+                                            <div>
+                                                <button type="button" title="8" value="8" class="bt_8" >8</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add(9)">
+                                            <div>
+                                                <button type="button" title="9" value="9" class="bt_9" >9</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('0')">
+                                            <div>
+                                                <button type="button" title="0" value="0" class="bt_0">0</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('+')">
+                                            <div>
+                                                <button type="button" title="더하기" value="+" class="bt_add" >+</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('-')">
+                                            <div>
+                                                <button type="button" title="빼기" value="-" class="bt_sub">-</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad" onclick="add('/')">
+                                            <div>
+                                                <button type="button" title="나누기" value="/" class="bt_divide">/</button>
+                                            </div>
+                                        </td>
+                                        <td class="num_pad"  onclick="calculate()">
+                                            <div>
+                                                <button type="button" title="계산하기" value="run" class="bt_run"></button>>run
+                                                    <!-- onclick="goOtherTCR(this, 'a=nco_x3e*1.cal&amp;r=1&amp;i=00138264_00000009F27C');" -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                   
+                                </table>
+                            </div>
+                        </section >
+                        <section  class="content_2">
+                            <div class="line">  
+                            </div>
+                            <div class="Title">
+                                <p>Ratio Transducer</p>
+                            </div>
+                            <table class="all" >
+                                <tr>
+                                    <td style="background-color:  #1e1f21; width: 190px;">
+                                        <p>전체 수치 :</p>
+                                    </td>
+                                    <td style=" width: 400px;">
+                                        
+                                    </td>
+                                    <td style="background-color:  #1e1f21; width: 130px;">
+                                        <p>px</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="before" >
+                                <tr>
+                                    <td style="background-color:  #1e1f21;  height: 60px; width: 350px; padding-left: 25px;">
+                                        <p>
+                                            해당 수치
+                                            <span class="value">
+                                                px
+                                            </span>
+                                        </p>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" height: 170px;">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="next" >
+                                <tr>
+                                    <td style="background-color:  #1e1f21;  height: 60px; width: 350px; padding-left: 25px;">
+                                        <p>
+                                            변환 수치
+                                            <span class="value">
+                                                px
+                                            </span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" height: 170px;">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </section >
+                        <section  class="content_3">
+                            <div class="line">  
+                            </div>
+                            <div class="Title">
+                                <p>Grid Guide</p>
+                            </div>
+                            <table  class="before" >
+                                <tr>
+                                    <td style="background-color:  #1e1f21;  height: 60px; padding-left: 25px;">
+                                        <p>전체 폭
+                                            <span class="value">
+                                                px
+                                            </span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" height: 50px;">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="before" style="margin-left: 20px; ">
+                                <tr>
+                                    <td style="background-color:  #1e1f21;  height: 60px; padding-left: 25px;">
+                                        <p>컨텐츠 폭
+                                            <span class="value">
+                                                px
+                                            </span>  
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" height: 50px;">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="before" >
+                                <tr>
+                                    <td style="background-color:  #1e1f21;  height: 60px; padding-left: 25px;">
+                                        <p>컨텐츠 개수</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" height: 50px;">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="before" style="margin-left: 20px;" >
+                                <tr>
+                                    <td style="background-color:  #1e1f21;  height: 60px; padding-left: 25px;">
+                                        <p>외부 여백 비율</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" height: 50px;">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="before" style=" height: 60px;" >
+                                <tr>
+                                    <td style="background-color:  #1e1f21; padding-left: 25px; width: 120px;">
+                                        <p>여백 폭</p>
+                                    </td>
+                                    <td style=" width: 230px; opacity: 0.6;">
+                                        <span class="value">
+                                            px
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="before" style="margin-left: 20px; height: 60px; width: 160px;" >
+                                <tr>
+                                    <td style="background-color:  #bb86fc; text-align: center; color: #121212;">
+                                        여백 계산
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="before" style="margin-left: 30px; height: 60px; width: 160px;" >
+                                <tr>
+                                    <td style="background-color:  #bb86fc; text-align: center; color: #121212;">
+                                        이미지화
+                                    </td>
+                                </tr>
+                            </table>
+                            <table  class="img_border">
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </section >
+                        <div class="line">  
+                        </div>
+                    </div>
+                    <aside class="sticky_aside" data-state data-offset="36">
+
+                    </aside>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="foot_inner">
+                    <div class="foot_area">
+                        <div class="foot_menu">
+                            <div class="logo">
+                                <a href="./index.html">Bird in</a>
+                            </div>
+                            <div class="list">
+                                <div class="list_aray">
+                                    <strong>DESIGNED BY</strong>
+                                    <ul>
+                                        <li class="team"><a>모&질이팀</a></li>
+                                        <li><a>2020.03 - 2020.12 privacy policy</a></li>
+                                    </ul>   
+                                </div>
+                                <strong>ABOUT</strong>
+                                <ul class="about_txt">
+                                    <li><a>저희는 디자인과 개발을 하며 사소한 계산에 의해 불편함을 느낄 수 있다고 느꼈고</a></li>
+                                    <li><a style='letter-spacing:0.58px'>그로 인해 다른 개발자 혹은 디자이너 그리고 이 분야를 처음 접한 모든 사람이</a></li>
+                                    <li><a style='letter-spacing:0.85px'>편하고 정확할 수 있게 이용하는 사이트를 개발하였습니다. 이 사이트에 대한</a></li>
+                                    <li><a style='letter-spacing:0.65px'>피드백과 관심이 있다면 연락해 주시고 언제든 기쁜 마음으로 환영하겠습니다.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="foot_info">
+                            <strong>CONTACT</strong>
+                            <div class="contact">
+                                <ul>
+                                    <li><a>연락처 : 010 - 5097 - 5913</a></li>
+                                    <li><a>이메일 : geon21h@naver.com</a></li>
+                                </ul>
+                            </div>
+                            <strong>SNS</strong>
+                            <div class="sns">
+                                <ul>
+                                    <li><a>Facebook</a></li>
+                                    <li><a>Instagram</a></li>
+                                    <li><a>Google+</a></li>
+                                </ul>
+                            </div>
+                            <p class="copy">Copyright by HTML CAlCULATOR. All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>    
+        <script type="text/javascript" src="/static/JS/JS.js">
+        </script>
+    </body>
+</html>
